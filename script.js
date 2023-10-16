@@ -44,16 +44,27 @@ if (upperCase) {
 }
 input.push(upperCase);
 
-// Asks user if they want password to contain special characters
-var specialCase = confirm("Would you like special characters?")
+// Asks user if they want password to contain integers
+var number = confirm("Would you like the password to contain numbers?")
 
-// If confirm upperCase variable saved as true, otherwise saved as false - added to end of array
-if (specialCase) {
-  specialCase = true;
+// If confirm number variable saved as true, otherwise saved as false - added to end of array
+if (number) {
+  number = true;
 } else {
-  specialCase = false;
+  number = false;
 }
-input.push(specialCase);
+input.push(number);
+
+// Asks user if they want password to contain specialCharacter
+var specialCharacter = confirm("Would you like special characters?")
+
+// If confirm specialCharacter variable saved as true, otherwise saved as false - added to end of array
+if (specialCharacter) {
+  specialCharacter = true;
+} else {
+  specialCharacter = false;
+}
+input.push(specialCharacter);
 
 console.log(input);
 
