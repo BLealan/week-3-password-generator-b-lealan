@@ -68,5 +68,10 @@ input.push(specialCharacter);
 
 console.log(input);
 
+// Runs through length of password entered by user and generates random character based on user input
+function generate (lowerCase, upperCase, number, specialCharacter) {
+  return for (var i = 0; i < passwordLength; i++){
+  }
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
