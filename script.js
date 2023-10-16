@@ -10,8 +10,9 @@ function generatePassword() {
   passwordText.value = password;
 
 }
-
+//Stores boolean desicions of user
 var input = [];
+
 // Asks user to input length of password
 var passwordLength = prompt("How long would you like your password to be");
 
@@ -19,29 +20,31 @@ var passwordLength = prompt("How long would you like your password to be");
 while (passwordLength < 8 || passwordLength > 128) {
   passwordLength = prompt("Please pick a number between 8 and 128")
 }
-console.log (passwordLength);
+console.log ("Password is " + passwordLength + " character long.");
 
 // Asks user if they want password to contain lower case characters
 var lowerCase = confirm("Would you like lower case characters?")
 
-// If the confirm lowerCase variable saved as true, otherwise it is saved as false
+// If confirm lowerCase variable saved as true, otherwise saved as false - added to array
 if (lowerCase) {
   lowerCase = true;
 } else {
   lowerCase = false;
 }
-console.log (lowerCase);
+input.push(lowerCase);
 
 // Asks user if they want password to contain upper case characters
 var upperCase = confirm("Would you like upper case characters?")
 
-// If the confirm upperCase variable saved as true, otherwise it is saved as false
+// If confirm upperCase variable saved as true, otherwise saved as false - added to end of array
 if (upperCase) {
   upperCase = true;
 } else {
   upperCase = false;
 }
-console.log (upperCase);
+input.push(upperCase);
+
+console.log(input);
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
