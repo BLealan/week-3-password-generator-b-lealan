@@ -11,5 +11,15 @@ function generatePassword() {
 
 }
 
+var input = [];
+// Asks user to input length of password
+let passwordLength = prompt("How long would you like your password to be");
+
+// If password length is outside acceptance criteria it will ask for another number
+while (passwordLength < 8 || passwordLength > 128) {
+  passwordLength = prompt("Please pick a number between 8 and 128")
+}
+console.log (passwordLength);
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
