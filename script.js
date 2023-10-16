@@ -32,5 +32,16 @@ if (lowerCase) {
 }
 console.log (lowerCase);
 
+// Asks user if they want password to contain upper case characters
+var upperCase = confirm("Would you like upper case characters?")
+
+// If the confirm upperCase variable saved as true, otherwise it is saved as false
+if (upperCase) {
+  upperCase = true;
+} else {
+  upperCase = false;
+}
+console.log (upperCase);
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
