@@ -44,6 +44,17 @@ if (upperCase) {
 }
 input.push(upperCase);
 
+// Asks user if they want password to contain special characters
+var specialCase = confirm("Would you like special characters?")
+
+// If confirm upperCase variable saved as true, otherwise saved as false - added to end of array
+if (specialCase) {
+  specialCase = true;
+} else {
+  specialCase = false;
+}
+input.push(specialCase);
+
 console.log(input);
 
 // Add event listener to generate button
