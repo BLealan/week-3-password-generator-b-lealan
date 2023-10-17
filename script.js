@@ -20,8 +20,8 @@ var passwordLength = prompt("How long would you like your password to be");
 while (passwordLength < 8 || passwordLength > 128) {
   passwordLength = prompt("Please pick a number between 8 and 128")
 }
-//Prompt returns a string so is changed to number in order to use
-passwordLength = Number(passwordLength);
+//Prompt returns a string so is changed to integer in order to use
+passwordLength = Math.floor(Number(passwordLength));
 console.log ("Password is " + passwordLength + " character long.");
 
 // Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
@@ -42,19 +42,39 @@ input.push(specialCharacter);
 //Check boolean inputs in console
 console.log(input);
 
-passwordCriteria = {
-  length: passwordLength,
-  isLowerCase: lowerCase,
-  isUpperCase: upperCase,
-  isNumber: number,
-  isSpecialCharacter: specialCharacter
-}
-console.log(passwordCriteria);
-console.log(typeof passwordLength);
-function createPassword (isLowerCase, isUpperCase, isNumber, isSpecialCharacter){
-}
+//Checks input from user to determine range of random character
+// if (number === true && specialCharacter === true){
+//   randomCharacter = 3;
+// } else if (number != true && specialCharacter === true){
+//   randomCharacter = 2;
+// } else if (number === true && specialCharacter != true) {
+//   randomCharacter = 2;
+// } else {
+//   randomCharacter = 1;
+// };
 
-  for (var i = 0; i < passwordLength; i++){
+// randomCharacter
+//Generates random number 0-9
+function randomNumber(){
+  return Math.floor(Math.random()*10);}
+// randomSpecial
+
+var passwordNumber = randomNumber();
+console.log(passwordNumber);
+console.log(passwordNumber);
+console.log(passwordNumber);
+
+
+// passwordCriteria = {
+//   length: passwordLength,
+//   isLowerCase: lowerCase,
+//   isUpperCase: upperCase,
+//   isNumber: number,
+//   isSpecialCharacter: specialCharacter
+// }
+// console.log(passwordCriteria);
+
+for (var i = 0; i < passwordLength; i++){
 
   }
 
@@ -63,5 +83,6 @@ function createPassword (isLowerCase, isUpperCase, isNumber, isSpecialCharacter)
 //   return for (var i = 0; i < passwordLength; i++){
 //   }
 // }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
