@@ -68,7 +68,7 @@ function randomSpecial (){
 // console.log(randomSpecial());
 
 var password = "";
-
+//if both numbers and special characters are selected
 if (number && specialCharacter){
   function numberAndSpecialPassword(){
     for (var i = 0; i < passwordLength; i++){
@@ -82,6 +82,7 @@ if (number && specialCharacter){
       }
     } return password;
   } console.log(numberAndSpecialPassword());
+//if numbers are selected but special is not
 } else if (number && !specialCharacter){
   function numberPassword(){
     for (var i = 0; i < passwordLength; i++){
@@ -93,6 +94,7 @@ if (number && specialCharacter){
       }
     } return password;
   } console.log(numberPassword());
+//if numbers not selected but special characters are
 } else if (!number && specialCharacter){
   function specialPassword(){
     for (var i = 0; i < passwordLength; i++){
