@@ -20,6 +20,8 @@ var passwordLength = prompt("How long would you like your password to be");
 while (passwordLength < 8 || passwordLength > 128) {
   passwordLength = prompt("Please pick a number between 8 and 128")
 }
+//Prompt returns a string so is changed to number in order to use
+passwordLength = Number(passwordLength);
 console.log ("Password is " + passwordLength + " character long.");
 
 // Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
@@ -48,6 +50,13 @@ passwordCriteria = {
   isSpecialCharacter: specialCharacter
 }
 console.log(passwordCriteria);
+console.log(typeof passwordLength);
+function createPassword (isLowerCase, isUpperCase, isNumber, isSpecialCharacter){
+}
+
+  for (var i = 0; i < passwordLength; i++){
+
+  }
 
 // // Runs through length of password entered by user and generates random character based on user input
 // function generate (lowerCase, upperCase, number, specialCharacter) {
