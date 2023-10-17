@@ -40,6 +40,15 @@ input.push(specialCharacter);
 //Check boolean inputs in console
 console.log(input);
 
+passwordCriteria = {
+  length: passwordLength,
+  isLowerCase: lowerCase,
+  isUpperCase: upperCase,
+  isNumber: number,
+  isSpecialCharacter: specialCharacter
+}
+console.log(passwordCriteria);
+
 // // Runs through length of password entered by user and generates random character based on user input
 // function generate (lowerCase, upperCase, number, specialCharacter) {
 //   return for (var i = 0; i < passwordLength; i++){
