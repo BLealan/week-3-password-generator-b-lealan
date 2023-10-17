@@ -42,17 +42,6 @@ input.push(specialCharacter);
 //Check boolean inputs in console
 console.log(input);
 
-//Checks input from user to determine range of random character
-// if (number === true && specialCharacter === true){
-//   randomCharacter = 3;
-// } else if (number != true && specialCharacter === true){
-//   randomCharacter = 2;
-// } else if (number === true && specialCharacter != true) {
-//   randomCharacter = 2;
-// } else {
-//   randomCharacter = 1;
-// };
-
 //Generates random letter - case determined by user choice
 function randomLetter(){
   var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -65,43 +54,25 @@ function randomLetter(){
     return passwordLetter
   };
 } 
-console.log(randomLetter());
-console.log(randomLetter());
-console.log(randomLetter());
-console.log(randomLetter());
-console.log(randomLetter());
-console.log(randomLetter());
 
 //Generates random number 0-9
 function randomNumber(){
   return Math.floor(Math.random()*10);
 }
-// randomSpecial
 
-var passwordNumber = randomNumber();
-console.log(randomNumber());
-console.log(randomNumber());
-console.log(randomNumber());
+// Generate random special character picked from string
+function randomSpecial (){
+  var special = '!()?[]`~;:!#$%^&*+=';
+  return special.charAt(Math.floor(Math.random() * special.length));
+}
 
-
-// passwordCriteria = {
-//   length: passwordLength,
-//   isLowerCase: lowerCase,
-//   isUpperCase: upperCase,
-//   isNumber: number,
-//   isSpecialCharacter: specialCharacter
-// }
-// console.log(passwordCriteria);
+console.log(randomLetter());
+console.log(randomNumber());
+console.log(randomSpecial());
 
 for (var i = 0; i < passwordLength; i++){
 
   }
-
-// // Runs through length of password entered by user and generates random character based on user input
-// function generate (lowerCase, upperCase, number, specialCharacter) {
-//   return for (var i = 0; i < passwordLength; i++){
-//   }
-// }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
