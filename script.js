@@ -53,12 +53,25 @@ console.log(input);
 //   randomCharacter = 1;
 // };
 
-//Generates random letter
+//Generates random letter - case determined by user choice
 function randomLetter(){
-  var alphabet = 'abcdefghijklmnopqrstuvwxyz'
-  return alphabet.charAt(Math.floor(Math.random() * 26));
-}
+  var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var passwordLetter = alphabet.charAt(Math.floor(Math.random() * 52))
+  if (lowerCase && !upperCase){
+    return passwordLetter.toLowerCase()
+  } else if (!lowerCase && upperCase){
+    return passwordLetter.toUpperCase()
+  } else {
+    return passwordLetter
+  };
+} 
 console.log(randomLetter());
+console.log(randomLetter());
+console.log(randomLetter());
+console.log(randomLetter());
+console.log(randomLetter());
+console.log(randomLetter());
+
 //Generates random number 0-9
 function randomNumber(){
   return Math.floor(Math.random()*10);
