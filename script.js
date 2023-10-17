@@ -53,16 +53,22 @@ console.log(input);
 //   randomCharacter = 1;
 // };
 
-// randomCharacter
+//Generates random letter
+function randomLetter(){
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'
+  return alphabet.charAt(Math.floor(Math.random() * 26));
+}
+console.log(randomLetter());
 //Generates random number 0-9
 function randomNumber(){
-  return Math.floor(Math.random()*10);}
+  return Math.floor(Math.random()*10);
+}
 // randomSpecial
 
 var passwordNumber = randomNumber();
-console.log(passwordNumber);
-console.log(passwordNumber);
-console.log(passwordNumber);
+console.log(randomNumber());
+console.log(randomNumber());
+console.log(randomNumber());
 
 
 // passwordCriteria = {
