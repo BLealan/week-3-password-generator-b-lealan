@@ -63,28 +63,55 @@ function randomSpecial (){
   return special.charAt(Math.floor(Math.random() * special.length));
 };
 
-console.log(randomLetter());
-console.log(randomNumber());
-console.log(randomSpecial());
+// console.log(randomLetter());
+// console.log(randomNumber());
+// console.log(randomSpecial());
 
 var password = "";
 
 if (number && specialCharacter){
   function numberAndSpecialPassword(){
-     
-  }
+    for (var i = 0; i < passwordLength; i++){
+      var randomFunction = Math.floor(Math.random()*3);
+      if (randomFunction === 1){
+        password = password.concat(randomLetter());
+      } else if (randomFunction === 2){
+        password = password.concat(randomNumber());
+      } else {
+        password = password.concat(randomSpecial());
+      }
+    } return password;
+  } console.log(numberAndSpecialPassword());
 } else if (number && !specialCharacter){
-
+  function numberPassword(){
+    for (var i = 0; i < passwordLength; i++){
+      var randomFunction = Math.floor(Math.random()*2);
+      if (randomFunction === 1){
+        password = password.concat(randomLetter());
+      } else {
+      password = password.concat(randomNumber());
+      }
+    } return password;
+  } console.log(numberPassword());
 } else if (!number && specialCharacter){
-
+  function specialPassword(){
+    for (var i = 0; i < passwordLength; i++){
+  var randomFunction = Math.floor(Math.random()*2);
+      if (randomFunction === 1){
+        password = password.concat(randomLetter());
+      } else {
+      password = password.concat(randomSpecial());
+      }
+    } return password;
+  } console.log(specialPassword());
 } else {
 //if there are no numbers or special characters chosen
-function justLetterPassword () {
-  for (var i = 0; i < passwordLength; i++){
-  password = password.concat(randomLetter());
-};
-return password};
-console.log(justLetterPassword());}
+  function justLetterPassword () {
+    for (var i = 0; i < passwordLength; i++){
+    password = password.concat(randomLetter());
+    } return password;
+  } console.log(justLetterPassword());
+}
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", generatePassword);
