@@ -22,56 +22,28 @@ while (passwordLength < 8 || passwordLength > 128) {
 }
 console.log ("Password is " + passwordLength + " character long.");
 
-// Asks user if they want password to contain lower case characters
-var lowerCase = confirm("Would you like lower case characters?")
+// Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
+// If confirmed variables saved as true, otherwise saved as false - added to input array
 
-// If confirm lowerCase variable saved as true, otherwise saved as false - added to array
-if (lowerCase) {
-  lowerCase = true;
-} else {
-  lowerCase = false;
-}
+var lowerCase = confirm("Would you like lower case characters?")
 input.push(lowerCase);
 
-// Asks user if they want password to contain upper case characters
 var upperCase = confirm("Would you like upper case characters?")
-
-// If confirm upperCase variable saved as true, otherwise saved as false - added to end of array
-if (upperCase) {
-  upperCase = true;
-} else {
-  upperCase = false;
-}
 input.push(upperCase);
 
-// Asks user if they want password to contain integers
 var number = confirm("Would you like the password to contain numbers?")
-
-// If confirm number variable saved as true, otherwise saved as false - added to end of array
-if (number) {
-  number = true;
-} else {
-  number = false;
-}
 input.push(number);
 
-// Asks user if they want password to contain specialCharacter
 var specialCharacter = confirm("Would you like special characters?")
-
-// If confirm specialCharacter variable saved as true, otherwise saved as false - added to end of array
-if (specialCharacter) {
-  specialCharacter = true;
-} else {
-  specialCharacter = false;
-}
 input.push(specialCharacter);
 
+//Check boolean inputs in console
 console.log(input);
 
-// Runs through length of password entered by user and generates random character based on user input
-function generate (lowerCase, upperCase, number, specialCharacter) {
-  return for (var i = 0; i < passwordLength; i++){
-  }
-}
+// // Runs through length of password entered by user and generates random character based on user input
+// function generate (lowerCase, upperCase, number, specialCharacter) {
+//   return for (var i = 0; i < passwordLength; i++){
+//   }
+// }
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
