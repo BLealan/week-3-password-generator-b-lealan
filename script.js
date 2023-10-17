@@ -29,13 +29,10 @@ console.log ("Password is " + passwordLength + " character long.");
 
 var lowerCase = confirm("Would you like lower case characters?")
 input.push(lowerCase);
-
 var upperCase = confirm("Would you like upper case characters?")
 input.push(upperCase);
-
 var number = confirm("Would you like the password to contain numbers?")
 input.push(number);
-
 var specialCharacter = confirm("Would you like special characters?")
 input.push(specialCharacter);
 
@@ -47,32 +44,47 @@ function randomLetter(){
   var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   var passwordLetter = alphabet.charAt(Math.floor(Math.random() * 52))
   if (lowerCase && !upperCase){
-    return passwordLetter.toLowerCase()
+    return passwordLetter.toLowerCase();
   } else if (!lowerCase && upperCase){
-    return passwordLetter.toUpperCase()
+    return passwordLetter.toUpperCase();
   } else {
-    return passwordLetter
+    return passwordLetter;
   };
-} 
+};
 
 //Generates random number 0-9
 function randomNumber(){
   return Math.floor(Math.random()*10);
-}
+};
 
 // Generate random special character picked from string
 function randomSpecial (){
   var special = '!()?[]`~;:!#$%^&*+=';
   return special.charAt(Math.floor(Math.random() * special.length));
-}
+};
 
 console.log(randomLetter());
 console.log(randomNumber());
 console.log(randomSpecial());
 
-for (var i = 0; i < passwordLength; i++){
+var password = "";
 
+if (number && specialCharacter){
+  function numberAndSpecialPassword(){
+     
   }
+} else if (number && !specialCharacter){
+
+} else if (!number && specialCharacter){
+
+} else {
+//if there are no numbers or special characters chosen
+function justLetterPassword () {
+  for (var i = 0; i < passwordLength; i++){
+  password = password.concat(randomLetter());
+};
+return password};
+console.log(justLetterPassword());}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
