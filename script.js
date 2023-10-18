@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
 
 // Asks user to input length of password
+function clickGeneratePassword(){
 var passwordLength = prompt("How long would you like your password to be");
 
 // If password length is outside acceptance criteria it will ask for another number
@@ -41,10 +42,7 @@ if (input[3]) {
   totalPasswordCharcters = totalPasswordCharcters.concat("'!()?[]`~;:!#$%^&*+=';");
 };
 
-console.log(input)
-console.log(totalPasswordCharcters);
-
-function generatePassword () {
+function generatePassword() {
   var newPassword = ""
   for (var i = 0; i < passwordLength; i++) {
       var randomNumber = Math.floor(Math.random() * totalPasswordCharcters.length);
@@ -53,7 +51,7 @@ function generatePassword () {
       return newPassword;
   }
 console.log(generatePassword());
-
+}
 //OLD CODE
 
 // // Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
