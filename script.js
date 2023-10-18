@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var passwordText = document.querySelector("#password");
 
 // Asks user to input length of password
 var passwordLength = prompt("How long would you like your password to be");
@@ -28,11 +29,30 @@ if (!input[0] && !input[1] && !input[2] &&!input[3]) {
 };
 
 if (input[0]) {
-  totalPasswordCharcters.concat("abcdefghijklmnopqrstuvwxyz");
-} 
+  totalPasswordCharcters = totalPasswordCharcters.concat("abcdefghijklmnopqrstuvwxyz");
+};
+if (input[1]) {
+  totalPasswordCharcters = totalPasswordCharcters.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+};
+if (input[2]) {
+  totalPasswordCharcters = totalPasswordCharcters.concat("0123456789");
+};
+if (input[3]) {
+  totalPasswordCharcters = totalPasswordCharcters.concat("'!()?[]`~;:!#$%^&*+=';");
+};
 
 console.log(input)
 console.log(totalPasswordCharcters);
+
+function generatePassword () {
+  var newPassword = ""
+  for (var i = 0; i < passwordLength; i++) {
+      var randomNumber = Math.floor(Math.random() * totalPasswordCharcters.length);
+      newPassword += totalPasswordCharcters.charAt(randomNumber); 
+    }
+      return newPassword;
+  }
+console.log(generatePassword());
 
 //OLD CODE
 
@@ -82,7 +102,6 @@ console.log(totalPasswordCharcters);
 // console.log(randomNumber());
 // console.log(randomSpecial());
 
-//   // var passwordText = document.querySelector("#password");
 // function generatePassword() {
 
 //   var password = "";
