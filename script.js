@@ -1,9 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-//Stores boolean desicions of user
-var input = [];
-
 // Asks user to input length of password
 var passwordLength = prompt("How long would you like your password to be");
 
@@ -15,8 +12,8 @@ while (passwordLength < 8 || passwordLength > 128) {
 passwordLength = Math.floor(Number(passwordLength));
 console.log ("Password is " + passwordLength + " character long.");
 
-// Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
-// If confirmed variables saved as true, otherwise saved as false - added to input array
+var totalPasswordCharcters = "";
+var input = [];
 
 var lowerCase = confirm("Would you like lower case characters?")
 input.push(lowerCase);
@@ -30,59 +27,86 @@ if (!input[0] && !input[1] && !input[2] &&!input[3]) {
   alert("Please enter one value you wish to have");
 };
 
-//Check boolean inputs in console
-console.log(input);
+if (input[0]) {
+  totalPasswordCharcters.concat("abcdefghijklmnopqrstuvwxyz");
+} 
 
-//Generates random letter - case determined by user choice
-function randomLetter(){
-  var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var passwordLetter = alphabet.charAt(Math.floor(Math.random() * 52))
-  if (lowerCase && !upperCase){
-    return passwordLetter.toLowerCase();
-  } else if (!lowerCase && upperCase){
-    return passwordLetter.toUpperCase();
-  } else {
-    return passwordLetter;
-  };
-};
+console.log(input)
+console.log(totalPasswordCharcters);
 
-//Generates random number 0-9
-function randomNumber(){
-  return Math.floor(Math.random()*10);
-};
+//OLD CODE
 
-// Generate random special character picked from string
-function randomSpecial (){
-  var special = '!()?[]`~;:!#$%^&*+=';
-  return special.charAt(Math.floor(Math.random() * special.length));
-};
+// // Series of windows asking user if they want password to contain lower/uppercase, numbers and special characters
+// // If confirmed variables saved as true, otherwise saved as false - added to input array
+
+// var lowerCase = confirm("Would you like lower case characters?")
+// input.push(lowerCase);
+// var upperCase = confirm("Would you like upper case characters?")
+// input.push(upperCase);
+// var number = confirm("Would you like the password to contain numbers?")
+// input.push(number);
+// var specialCharacter = confirm("Would you like special characters?")
+// input.push(specialCharacter);
+// if (!input[0] && !input[1] && !input[2] &&!input[3]) {
+//   alert("Please enter one value you wish to have");
+// };
+
+// //Check boolean inputs in console
+// console.log(input);
+
+// //Generates random letter - case determined by user choice
+// function randomLetter(){
+//   var alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//   var passwordLetter = alphabet.charAt(Math.floor(Math.random() * 52))
+//   if (lowerCase && !upperCase){
+//     return passwordLetter.toLowerCase();
+//   } else if (!lowerCase && upperCase){
+//     return passwordLetter.toUpperCase();
+//   } else {
+//     return passwordLetter;
+//   };
+// };
+
+// //Generates random number 0-9
+// function randomNumber(){
+//   return Math.floor(Math.random()*10);
+// };
+
+// // Generate random special character picked from string
+// function randomSpecial (){
+//   var special = '!()?[]`~;:!#$%^&*+=';
+//   return special.charAt(Math.floor(Math.random() * special.length));
+// };
 
 // console.log(randomLetter());
 // console.log(randomNumber());
 // console.log(randomSpecial());
 
-function generatePassword() {
-  // var passwordText = document.querySelector("#password");
-  function pullElements(){
-  var password = " ";
-  for (var i = 0; i < passwordLength; i++){ 
-    var randomFunction = input[Math.floor(Math.random()*3)];
-    if (randomFunction && randomFunction === 0) {
-      password += randomLetter();
-    } else if (randomFunction && randomFunction === 1) {
-      password += randomLetter();
-    } else if (randomFunction && randomFunction === 2) {
-      password += randomNumber();
-    } else if (randomFunction && randomFunction === 3) {
-      password += randomSpecial();
-    } else {
-      break; 
-  }     
-} 
+//   // var passwordText = document.querySelector("#password");
+// function generatePassword() {
 
-} password = pullElements();
-return password;
+//   var password = "";
 
+//   for (var i = 0; i < passwordLength; i++) {
+//     var specialNumber = Math.floor(Math.random() * 4);
+//     var randomFunction = input[specialNumber];
+//     console.log(specialNumber);
+//     if (randomFunction === true && specialNumber === 0) {
+//       password += randomLetter();
+//     } else if (randomFunction === true && specialNumber === 1) {
+//       password += randomLetter();
+//     } else if (randomFunction === true && specialNumber === 2) {
+//       password += randomNumber();
+//     } else if (randomFunction === true && specialNumber === 3) {
+//       password += randomSpecial();
+//     } else {
+//       break; 
+//     }
+//   }
+//     return password;
+// }
+
+// console.log(generatePassword());
 
 //if both numbers and special characters are selected
 // if (number && specialCharacter){
@@ -129,6 +153,3 @@ return password;
 //     password = password.concat(randomLetter());
 //     } return password;
 //   } console.log(justLetterPassword());
-// }
-console.log(password);} 
-
