@@ -1,10 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var password = "";
-function generatePassword() {
-  var passwordText = document.querySelector("#password");
-
 //Stores boolean desicions of user
 var input = [];
 
@@ -30,7 +26,6 @@ var number = confirm("Would you like the password to contain numbers?")
 input.push(number);
 var specialCharacter = confirm("Would you like special characters?")
 input.push(specialCharacter);
-
 if (!input[0] && !input[1] && !input[2] &&!input[3]) {
   alert("Please enter one value you wish to have");
 };
@@ -66,7 +61,10 @@ function randomSpecial (){
 // console.log(randomNumber());
 // console.log(randomSpecial());
 
-function pullElements(){
+function generatePassword() {
+  // var passwordText = document.querySelector("#password");
+  function pullElements(){
+  var password = " ";
   for (var i = 0; i < passwordLength; i++){ 
     var randomFunction = input[Math.floor(Math.random()*3)];
     if (randomFunction && randomFunction === 0) {
@@ -79,13 +77,11 @@ function pullElements(){
       password += randomSpecial();
     } else {
       break; 
-      alert("Please enter one value you wish to have");
   }     
 } 
 
 } password = pullElements();
 return password;
-
 
 
 //if both numbers and special characters are selected
@@ -134,4 +130,5 @@ return password;
 //     } return password;
 //   } console.log(justLetterPassword());
 // }
-} 
+console.log(password);} 
+
