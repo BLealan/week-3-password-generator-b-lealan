@@ -1,8 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-// function name changed to be more accurate
+var password = "";
 function generatePassword() {
   var passwordText = document.querySelector("#password");
 
@@ -31,6 +30,10 @@ var number = confirm("Would you like the password to contain numbers?")
 input.push(number);
 var specialCharacter = confirm("Would you like special characters?")
 input.push(specialCharacter);
+
+if (!input[0] && !input[1] && !input[2] &&!input[3]) {
+  alert("Please enter one value you wish to have");
+};
 
 //Check boolean inputs in console
 console.log(input);
@@ -63,51 +66,72 @@ function randomSpecial (){
 // console.log(randomNumber());
 // console.log(randomSpecial());
 
-var password = "";
+function pullElements(){
+  for (var i = 0; i < passwordLength; i++){ 
+    var randomFunction = input[Math.floor(Math.random()*3)];
+    if (randomFunction && randomFunction === 0) {
+      password += randomLetter();
+    } else if (randomFunction && randomFunction === 1) {
+      password += randomLetter();
+    } else if (randomFunction && randomFunction === 2) {
+      password += randomNumber();
+    } else if (randomFunction && randomFunction === 3) {
+      password += randomSpecial();
+    } else {
+      break; 
+      alert("Please enter one value you wish to have");
+  }     
+} 
+
+} password = pullElements();
+return password;
+
+
+
 //if both numbers and special characters are selected
-if (number && specialCharacter){
-  function numberAndSpecialPassword(){
-    for (var i = 0; i < passwordLength; i++){
-      var randomFunction = Math.floor(Math.random()*3);
-      if (randomFunction === 1){
-        password = password.concat(randomLetter());
-      } else if (randomFunction === 2){
-        password = password.concat(randomNumber());
-      } else {
-        password = password.concat(randomSpecial());
-      }
-    } return password;
-  } console.log(numberAndSpecialPassword());
-//if numbers are selected but special is not
-} else if (number && !specialCharacter){
-  function numberPassword(){
-    for (var i = 0; i < passwordLength; i++){
-      var randomFunction = Math.floor(Math.random()*2);
-      if (randomFunction === 1){
-        password = password.concat(randomLetter());
-      } else {
-      password = password.concat(randomNumber());
-      }
-    } return password;
-  } console.log(numberPassword());
-//if numbers not selected but special characters are
-} else if (!number && specialCharacter){
-  function specialPassword(){
-    for (var i = 0; i < passwordLength; i++){
-  var randomFunction = Math.floor(Math.random()*2);
-      if (randomFunction === 1){
-        password = password.concat(randomLetter());
-      } else {
-      password = password.concat(randomSpecial());
-      }
-    } return password;
-  } console.log(specialPassword());
-} else {
-//if there are no numbers or special characters chosen
-  function justLetterPassword () {
-    for (var i = 0; i < passwordLength; i++){
-    password = password.concat(randomLetter());
-    } return password;
-  } console.log(justLetterPassword());
-}
-}
+// if (number && specialCharacter){
+//   function numberAndSpecialPassword(){
+//     for (var i = 0; i < passwordLength; i++){
+//       var randomFunction = Math.floor(Math.random()*3);
+//       if (randomFunction === 1){
+//         password = password.concat(randomLetter());
+//       } else if (randomFunction === 2){
+//         password = password.concat(randomNumber());
+//       } else {
+//         password = password.concat(randomSpecial());
+//       }
+//     } return password;
+//   } console.log(numberAndSpecialPassword());
+// //if numbers are selected but special is not
+// } else if (number && !specialCharacter){
+//   function numberPassword(){
+//     for (var i = 0; i < passwordLength; i++){
+//       var randomFunction = Math.floor(Math.random()*2);
+//       if (randomFunction === 1){
+//         password = password.concat(randomLetter());
+//       } else {
+//       password = password.concat(randomNumber());
+//       }
+//     } return password;
+//   } console.log(numberPassword());
+// //if numbers not selected but special characters are
+// } else if (!number && specialCharacter){
+//   function specialPassword(){
+//     for (var i = 0; i < passwordLength; i++){
+//   var randomFunction = Math.floor(Math.random()*2);
+//       if (randomFunction === 1){
+//         password = password.concat(randomLetter());
+//       } else {
+//       password = password.concat(randomSpecial());
+//       }
+//     } return password;
+//   } console.log(specialPassword());
+// } else {
+// //if there are no numbers or special characters chosen
+//   function justLetterPassword () {
+//     for (var i = 0; i < passwordLength; i++){
+//     password = password.concat(randomLetter());
+//     } return password;
+//   } console.log(justLetterPassword());
+// }
+} 
