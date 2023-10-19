@@ -10,6 +10,15 @@ Depending on the user input a block of respective characters are concated to an 
 
 Initial attempts proved too complex to manage (but can be viewed in the project's GitHub repository history). Each character was generated from separate functions. Then the theory was that a function would iterate the length of the password, and for each iteration check the boolean value of the user's input and simultaneously choose a random function to generate a character to concatenate into an empty password string. However, this had too many values to compare and appeared to contradict each other, so after consulting an AskBCS assistant it was advised I look at some examples of other generators (provided in credits).
 
+## Usage
+
+Below is a link to the live site and screenshots of the page showing it deployed:
+- https://blealan.github.io/week-3-password-generator-b-lealan/
+
+![Screenshot 1](./assets/images/Screenshot-1.png)
+![Screenshot 2](./assets/images/Screenshot-2.png)
+![Screenshot 3](./assets/images/Screenshot-3.png)
+
 ## Credits
 
 - https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/
